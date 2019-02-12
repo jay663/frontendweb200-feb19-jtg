@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `<header><h1>Pete's Page Header</h1></header>`
+  templateUrl: `./header.component.html`
 })
 export class HeaderComponent {
-
+  @Input() subheading = 'Subheading Here';
 }
-

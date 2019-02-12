@@ -6,6 +6,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
+import { TodoListComponent } from './components/todo/todo-list/todo-list.component';
+import { TodoEntryComponent } from './components/todo/todo-entry/todo-entry.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { NavComponent } from './components/nav/nav.component';
     HeaderComponent,
     TodoComponent,
     DashboardComponent,
-    NavComponent
+    NavComponent,
+    TodoListComponent,
+    TodoEntryComponent
   ],
   imports: [
     BrowserModule,

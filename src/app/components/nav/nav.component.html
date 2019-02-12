@@ -1,10 +1,13 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link"
-       href="#">Dashboard</a>
+       [routerLinkActive]="['active']"
+       [routerLink]="['dashboard']">Dashboard</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active"
-       href="#">Todo List</a>
+    <a class="nav-link"
+       [routerLinkActive]="['active']"
+       [routerLink]="['todo']">Todo List</a>
   </li>
+
 </ul>
