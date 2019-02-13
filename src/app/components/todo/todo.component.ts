@@ -1,31 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoItem, TodoList } from './models';
+import { Observable } from 'rxjs';
+import { TodoList } from './models';
+import { TodoDataService } from './todo-data-service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent implements OnInit {
-  stuff: TodoList = {
-    items: [
-      { id: '1', description: 'Shovel Snow', completed: false },
-      { id: '2', description: 'Change Oil', completed: false },
-    ]
-  };
 
-  constructor() { }
+export class TodoComponent implements OnInit {
+  stuff: Observable<TodoList>;
+
+  constructor(private service: TodoDataService) {
+    // this.stuff = service.getList();
+    this.stuff = service.getListAsObservable();
+  }
 
   ngOnInit() {
   }
 
   addNewItem(description: string) {
-    const itemToAdd: TodoItem = {
-      description,
-      completed: false,
-      id: '99'
-    };
+    this.service.addTodoItem(description);
+    // this.stuff = this.service.getList();
+    this.stuff = this.service.getListAsObservable();
 
-    this.stuff.items = [itemToAdd, ... this.stuff.items];
+    // this.stuff.items = [itemToAdd, ... this.stuff.items];
   }
 }

@@ -9,4 +9,9 @@
            value="x"><span [ngClass]="{'completed': item.completed}">{{ item.description }}</span>
   </li>
 
+  <pre>
+    {{ 'View Your Data Below Here'}}
+    {{ '--------------------------'}}
+    {{ list | json}}
+  </pre>
 </ul>
