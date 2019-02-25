@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { } from 'module';
 import { TodoAdded } from '../../actions/todos.actions';
 import { TodosState } from '../../reducers';
 
