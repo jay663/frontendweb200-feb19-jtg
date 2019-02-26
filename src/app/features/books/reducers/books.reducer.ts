@@ -1,14 +1,14 @@
-import { EntityState } from '@ngrx/entity';
-import { Action } from '@ngrx/store';
+import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import * as actions from '../actions/books.actions';
 
-export interface BookEntry {
+export interface BookEntity {
   id: string;
   title: string;
   author: string;
   format: string;
 }
 
-export interface State extends EntityState<BookEntry> {
+export interface State extends EntityState<BookEntity> {
 
 }
 
@@ -20,7 +20,9 @@ const initialState: State = {
   }
 };
 
-export function reducer(state: State = initialState, action: Action): State {
+export const adapter = createEntityAdapter<BookEntity>();
+
+export function reducer(state: State = initialState, action: actions.All): State {
   switch (action.type) {
     default: {
       return state;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { BookAdded } from '../actions/books.actions';
-import { } from '../reducers/books.reducer';
+import { BooksState } from '../reducers';
 
 
 @Component({
@@ -11,15 +11,17 @@ import { } from '../reducers/books.reducer';
 })
 export class BookEntryComponent implements OnInit {
 
-  constructor(private store: Store<BookState>) { }
+  constructor(private store: Store<BooksState>) { }
 
   ngOnInit() {
   }
 
-  add(descriptionElement: HTMLInputElement) {
-
+  add(bookTitleElement: HTMLInputElement, authorElement: HTMLInputElement, bookFormatElement: HTMLInputElement) {
+    const title = bookTitleElement.value;
+    //const author = authorElement.value;
+    //const format = bookFormatElement.value;
     // Todo get the HTML elements here!
-    const title = 'The Canterbury Tales';
+    //const title = 'The Canterbury Tales';
     const author = 'Geoffrey Chaucer';
     const format = 'Paperback';
 

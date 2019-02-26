@@ -10,7 +10,6 @@
 <br />
 <section class="row">
   <div class="col">
-    <app-books-list>
-    </app-books-list>
+    <app-books-list [list]="books$ | async"></app-books-list>
   </div>
 </section>
