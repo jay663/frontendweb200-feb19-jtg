@@ -24,6 +24,9 @@ export const adapter = createEntityAdapter<BookEntity>();
 
 export function reducer(state: State = initialState, action: actions.All): State {
   switch (action.type) {
+    case actions.ADD_BOOK: {
+      return adapter.addOne(action.payload, state);
+    }
     default: {
       return state;
     }
