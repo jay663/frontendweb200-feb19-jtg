@@ -18,12 +18,12 @@ export class BookEntryComponent implements OnInit {
 
   add(bookTitleElement: HTMLInputElement, authorElement: HTMLInputElement, bookFormatElement: HTMLInputElement) {
     const title = bookTitleElement.value;
-    //const author = authorElement.value;
-    //const format = bookFormatElement.value;
-    // Todo get the HTML elements here!
+    const author = authorElement.value;
+    const format = bookFormatElement.value;
+
     //const title = 'The Canterbury Tales';
-    const author = 'Geoffrey Chaucer';
-    const format = 'Paperback';
+    //const author = 'Geoffrey Chaucer';
+    //const format = 'Paperback';
 
     this.store.dispatch(new BookAdded(title, author, format));
   }

@@ -13,11 +13,13 @@ export interface State extends EntityState<BookEntity> {
 }
 
 const initialState: State = {
-  ids: ['1', '2'],
-  entities: {
-    1: { id: '1', title: 'Clean Garage', author: 'MM', format: 'Hardcover' },
-    2: { id: '2', title: 'Fix Downspout', author: 'BB', format: 'E-Book' }
-  }
+  // ids: ['1', '2'],
+  // entities: {
+  //   1: { id: '1', title: 'Clean Garage', author: 'MM', format: 'Hardcover' },
+  //   2: { id: '2', title: 'Fix Downspout', author: 'BB', format: 'E-Book' }
+  // }
+  ids: [],
+  entities: {}
 };
 
 export const adapter = createEntityAdapter<BookEntity>();

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BookListItem } from '../models';
-import { selectBooksListItems, BooksState, selectTitleMessage } from '../reducers';
+import { selectBooksListItems, BooksState } from '../reducers';
+import { BookLoaded } from '../actions/books.actions';
 
 @Component({
   selector: 'app-books',
@@ -10,8 +11,6 @@ import { selectBooksListItems, BooksState, selectTitleMessage } from '../reducer
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-
-  message$: Observable<string>;
   books$: Observable<BookListItem[]>;
 
   constructor(private store: Store<BooksState>) { }
@@ -19,8 +18,7 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
     // select - selects data from the store
     // dispatch is another method you use
-    this.message$ = this.store.select(selectTitleMessage);
-    this.books$ = this.store.select(selectBooksListItems);
+    this.books$ = this.store.select(selectBooksListItems);   
   }
 
 

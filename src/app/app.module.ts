@@ -14,7 +14,7 @@ import { TodoListComponent } from './components/todo/todo-list/todo-list.compone
 import { TodoComponent } from './components/todo/todo.component';
 import { BooksModule } from './features/books/books.module';
 import { TodosReduxModule } from './features/todos-redux/todos-redux.module';
-import { reducers } from './reducers/Index';
+import { reducers } from './reducers/index';
 
 
 @NgModule({

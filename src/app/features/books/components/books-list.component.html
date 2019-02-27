@@ -1,7 +1,9 @@
-<ul class="list-unstyled">
-  <li class="alert alert-info"
-      *ngFor="let item of list">
-    {{item.title}}  {{item.author}}  {{item.format}}
-  </li>
-</ul>
+<div>
+  <div class="card alert alert-info" style="width: 15rem;" *ngFor="let item of list">
+    <div class="card-body">
+    <h5 class="card-title">{{item.title}}</h5>
+    <h6 class="card-subtitle">{{item.author}}</h6>
+    <p class="card-text">{{item.format}}</p>
+  </div>
+</div>
 

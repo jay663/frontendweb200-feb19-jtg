@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, mergeMap } from 'rxjs/operators';
 import * as actions from '../actions/books.actions';
+import { BookService } from '../service/book.service';
 
 @Injectable()
 export class BooksEffect {
@@ -14,7 +15,14 @@ export class BooksEffect {
       switchMap(action => this.http.post('http://localhost:3000/books', action.payload))
     );
 
-  constructor(private actions$: Actions, private http: HttpClient) {
+  @Effect({ dispatch: false }) loadBooks$ = this.actions$
+    .pipe(
+      ofType(actions.GET_BOOKS),
+      map(a => a as actions.BookLoaded),
+      switchMap(action => this.service.getBooks())
+    );
+
+  constructor(private actions$: Actions, private http: HttpClient, private service: BookService) {
 
   }
 
